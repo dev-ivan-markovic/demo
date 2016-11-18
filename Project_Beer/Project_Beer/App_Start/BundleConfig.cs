@@ -23,6 +23,8 @@ namespace Project_Beer.App_Start
                 .IncludeDirectory("~/Scripts/app", "*.js")
                 .IncludeDirectory("~/Scripts/app/Controllers", "*.js")
                 .IncludeDirectory("~/Scripts/app/Factories", "*.js"));
+
+            bundles.Add(new StyleBundle("~/Content/css").IncludeDirectory("~/Content/css","*.css"));
         }
     }
 }

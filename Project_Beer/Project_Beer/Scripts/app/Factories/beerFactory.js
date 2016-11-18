@@ -1,10 +1,11 @@
 ﻿beerApp.factory('beerFactory', ["$http",  function($http) {
-    var apiUrl = window.baseApiUrl.replace("query","beers");
+    var apiUrl = window.baseUrl + "api/beer" ;
     var dataFactory = {};
-    dataFactory.getAll = function (handleSuccess, handleError) {
+    dataFactory.getPage = function (page, handleSuccess, handleError) {
+        var requestUrl = apiUrl + "?currentPage=" + page;
         return $http({
             method: "get",
-            url: apiUrl
+            url: requestUrl
         }).then(handleSuccess, handleError);
     }
     return dataFactory;

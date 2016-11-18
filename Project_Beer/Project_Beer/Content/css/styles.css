@@ -1,0 +1,23 @@
+﻿body {
+}
+
+a:hover{cursor: pointer}
+label {font-weight: normal;}
+
+input, button, select, textarea  {
+    border: 1px solid #d3d3d3;
+    color: #333333;
+}
+input, select, textarea {width: 100%;}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.beer-list {width: 50%;
+}
+.beer-list .beer-item  {display: inline-flex;}
+.beer-list .beer-item p { max-height: 100px;overflow: hidden; }
+.beer-item:hover {cursor: pointer}

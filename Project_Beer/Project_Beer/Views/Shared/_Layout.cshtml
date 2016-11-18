@@ -5,10 +5,12 @@
 <!DOCTYPE html>
 
 <html data-ng-app="beerApp">
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>_Layout</title>
-</head>
+    <head>
+       
+        <meta name="viewport" content="width=device-width" />
+        <title>_Layout</title>
+         @Styles.Render("~/Content/css")
+    </head>
 <body>
     <section id="view" data-ng-view="">
         @RenderBody()
@@ -16,7 +18,6 @@
      @Scripts.Render(BundleConfig.SCRIPTS_GLOBAL)
     <script type="text/javascript">
         window.baseUrl = '@Url.Content("~/")';
-        window.baseApiUrl = "http://api.brewerydb.com/v2/query?key=c7bcbab548a8acc075f61676b339928d";
     </script>
 </body>
 </html>

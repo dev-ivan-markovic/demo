@@ -1,5 +1,16 @@
 ﻿<h2>Beer</h2>
-
-<div>
-    Beeeer!!!
+<div class="beer-list">
+ <input ng-model="searchText" placeholder="Search for a beer">
+    <ul>
+        <li class="beer-item" ng-repeat="b in beers | filter:{Labels:[]}:true | filter:{Name: searchText || undefined} ">
+                                   <img ng-src="{{b.Labels['Icon']}}"/>
+               
+                <span>
+                    {{b.Name}}
+                </span>
+                <p>
+                    {{b.Description}}
+                </p>
+        </li>
+    </ul>
 </div>
