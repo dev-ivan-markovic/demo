@@ -1,0 +1,21 @@
+﻿@using System.Web.Optimization
+@using Project_Beer.App_Start
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+</head>
+<body>
+    <section id="right-view" data-ng-view="">
+        @RenderBody()
+    </section>
+     @Scripts.Render(BundleConfig.SCRIPTS_GLOBAL)
+</body>
+</html>
