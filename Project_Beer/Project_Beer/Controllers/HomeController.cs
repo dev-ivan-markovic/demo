@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace Project_Beer.Controllers
 {
@@ -12,7 +8,11 @@ namespace Project_Beer.Controllers
         // GET: /Home/
         public ActionResult Index()
         {
-            return View();
+            return PartialView();
+        }
+        public ActionResult Beer()
+        {
+            return PartialView();
         }
 	}
 }
