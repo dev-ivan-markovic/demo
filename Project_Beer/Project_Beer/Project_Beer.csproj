@@ -199,6 +199,7 @@
     <Compile Include="Service\IBeerService.cs" />
     <Compile Include="WebApi\BeerController.cs" />
     <Compile Include="Service\BeerService.cs" />
+    <Compile Include="WebApi\SearchController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
