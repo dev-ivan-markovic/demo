@@ -1,16 +1,43 @@
-﻿<h2>Beer</h2>
-<div class="beer-list">
- <input ng-model="searchText" placeholder="Search for a beer">
+﻿<div id="start-section">
+   <h2>
+    <a id="home">
+        Beer Application
+    </a>
+   </h2> 
+    <input type="text" placeholder="Search for Your favorite Beer" ng-change="onSearchBeer(this)" ng-model="search" ng-model-options='{ debounce: 500 }'/>
+    <label class="hint">i.e Brown, Oktober</label>
+</div>
+
+<div class="beer-list" ng-show="beers!=null && beers.length>0">
+    <input ng-model="searchText" placeholder="Filter results">
     <ul>
-        <li class="beer-item" ng-repeat="b in beers | filter:{Labels:[]}:true | filter:{Name: searchText || undefined} ">
-                                   <img ng-src="{{b.Labels['Icon']}}"/>
+        <li class="beer-item" ng-repeat="b in beers | filter:searchText" ng-click="showDetails(b.Id)">
+            <div class="icon">
+                <img ng-src="{{b.Labels['Icon']!=null?b.Labels['Icon']:'/Content/images/beer_icon.png'}}"/>
+            </div> 
                
-                <span>
-                    {{b.Name}}
-                </span>
-                <p>
-                    {{b.Description}}
-                </p>
+            <span class="name">
+                {{b.Name}}
+            </span>
+            <p class="description" title="{{b.Description}}">
+                {{b.Description}}
+            </p>
         </li>
+    </ul>
+</div>
+<div class="beer-details" ng-show="details!=null">
+    <ul>
+        <li>
+            <h2 class="name">{{details.Name}}</h2>
+        </li>
+        <li>
+            <p class="description">{{details.Description}}</p>
+        </li>
+        <li>
+            <div>
+                 <img ng-src="{{details.Labels['Large']!=null?details.Labels['Large']:'/Content/images/beer_icon.png'}}"/>
+            </div>  
+        </li>
+        <li></li>
     </ul>
 </div>

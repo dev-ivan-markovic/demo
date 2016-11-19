@@ -32,5 +32,20 @@ namespace Project_Beer.Service
                 return result;
             }
         }
+
+        public async Task<PagedBeers> SearchBeer(string query, int currentPage)
+        {
+            var result = new PagedBeers();
+            var uri = string.Format(BaseUri, "search") + "&type=beer&q="+query;
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    result = await response.Content.ReadAsAsync<PagedBeers>();
+                }
+                return result;
+            }
+        }
     }
 }

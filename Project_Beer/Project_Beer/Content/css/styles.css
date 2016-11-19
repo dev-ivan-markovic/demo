@@ -1,23 +1,41 @@
-﻿body {
-}
-
+﻿body {font-size: 15px;color:#3f3d3c}
 a:hover{cursor: pointer}
 label {font-weight: normal;}
-
-input, button, select, textarea  {
-    border: 1px solid #d3d3d3;
-    color: #333333;
-}
+input, button, select, textarea  {border: 1px solid #d3d3d3;color: #333333;}
 input, select, textarea {width: 100%;}
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+ul {list-style: none;padding: 0;margin: 0;}
 
-.beer-list {width: 50%;
-}
-.beer-list .beer-item  {display: inline-flex;}
-.beer-list .beer-item p { max-height: 100px;overflow: hidden; }
+.beer-list {width: 50%;display: inline-block;}
+.beer-list .beer-item  {display: inline-flex;margin: 15px 0; width: 100%;}
+.beer-list .beer-item p { max-height: 110px;overflow: hidden;text-align: justify; }
 .beer-item:hover {cursor: pointer}
+.beer-item .icon img {  max-width: 64px;}
+.beer-item .name { display: inline-block;
+  font-size: 17px;
+  margin:0 50px 0 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 260px;
+}
+.beer-item .description { padding:3px 0; margin: 0}
+.beer-details {
+  display: inline-block;
+  margin-left: 2%;
+  vertical-align: top;
+  width: 40%;
+}
+.beer-details .name{font-size: 20px}
+.beer-details .description{}
+
+#start-section h2{ display: inline-block; width: 10%}
+#start-section input{ display: inline-block; width: 89%}
+#start-section {margin-bottom: 100px;}
+.hint {
+  bottom: 20px;
+  color: #cacaca;
+  display: inline-block;
+  margin-left: 11%;
+  position: relative;
+}
