@@ -9,9 +9,13 @@
 </div>
 
 <div class="beer-list" ng-show="beers!=null && beers.length>0">
+    <div class="sort-options">
+        <a class="asc" ng-click="direction = false">asc</a>
+        <a class="desc" ng-click="direction = true">desc</a>
+    </div>
     <input ng-model="searchText" placeholder="Filter results">
     <ul>
-        <li class="beer-item" ng-repeat="b in beers | filter:searchText" ng-click="showDetails(b.Id)">
+        <li class="beer-item" ng-repeat="b in beers | filter:searchText | orderBy : 'name' : direction" ng-click="showDetails(b.Id)">
             <div class="icon">
                 <img ng-src="{{b.Labels['Icon']!=null?b.Labels['Icon']:'/Content/images/beer_icon.png'}}"/>
             </div> 
